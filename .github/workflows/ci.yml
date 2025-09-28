@@ -28,9 +28,12 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        working-directory: infrastructure
 
       - name: Terraform Plan
         run: terraform plan -out=tfplan
+        working-directory: infrastructure
 
       - name: Terraform Apply
         run: terraform apply -auto-approve tfplan
+        working-directory: infrastructure
