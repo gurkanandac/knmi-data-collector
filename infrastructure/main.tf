@@ -11,7 +11,7 @@ resource "azurerm_storage_account" "storage" {
   account_replication_type = "LRS"
 }
 
-resource "azurerm_app_service_plan" "func_plan" {
+resource "azurerm_service_plan" "func_plan" {
   name                = "weather"
   location            = var.resource_group_location
   resource_group_name = var.resource_group_name
