@@ -12,13 +12,10 @@ resource "azurerm_storage_account" "storage" {
 }
 
 resource "azurerm_service_plan" "func_plan" {
-  name                = "weather"
+  name                = "weather-func-plan"
   location            = var.resource_group_location
   resource_group_name = var.resource_group_name
   kind                = "FunctionApp"
-
-  sku {
-    tier = "Dynamic"
-    size = "Y1"
-  }
+  os_type             = "Linux"
+  sku_name            = "Y1"
 }
