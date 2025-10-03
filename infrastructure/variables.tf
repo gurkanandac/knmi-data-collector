@@ -18,6 +18,6 @@ variable "key_vault_name" {
 
 variable "storage_account_name" {
   type        = string
-  default     = "weather_strorageGRK"
+  default     = "weather_stroragegrk"
   description = "Name of the storage account"
 }
