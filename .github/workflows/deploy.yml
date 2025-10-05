@@ -1,0 +1,31 @@
+name: Deploy Azure Function
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-function:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Azure Functions Core Tools
+        run: |
+          npm install -g azure-functions-core-tools@4 --unsafe-perm true
+
+      - name: Log in to Azure (manual)
+        run: az login
+
+      - name: Set subscription
+        run: az account set --subscription "Azure for Students"
+
+      - name: Publish Azure Function
+        run: |
+          cd src/functions
+          func azure functionapp publish weather-scheduled-func
