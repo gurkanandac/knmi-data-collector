@@ -28,4 +28,4 @@ jobs:
       - name: Publish Azure Function
         run: |
           cd src/functions
-          func azure functionapp publish weather-scheduled-func
+          func azure functionapp publish weather-scheduled-func --python
