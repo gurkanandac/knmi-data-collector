@@ -2,4 +2,7 @@ azure-functions
 azure-identity
 azure-keyvault-secrets
 requests
-
+pandas
+xarray
+netCDF4
+mysql-connector-python==9.4.0
